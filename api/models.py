@@ -29,6 +29,7 @@ class PlayerResponse(BaseModel):
     playerHeadshotUrl: Optional[str] = Field(None, description="URL to player headshot")
     playerHomeCity: Optional[str] = Field(None, description="Player home city")
     playerHomeCountry: Optional[str] = Field(None, description="Player home country")
+    playerIsActive: int = Field(..., description="Whether the player is currently active")
 
     class Config:
         from_attributes = True
