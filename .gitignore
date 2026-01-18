@@ -50,3 +50,4 @@ Thumbs.db
 # README files
 PLAYER_ENDPOINT_CHANGES.md
 HEROKU_DEPLOYMENT.md
+/.readme
