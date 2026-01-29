@@ -47,6 +47,7 @@ class GameResponse(BaseModel):
     gameState: str = Field(..., description="Game state (scheduled, in_progress, final, etc.)")
     gamePeriod: Optional[int] = Field(None, description="Current period")
     gameClock: Optional[str] = Field(None, description="Current game clock")
+    gameInIntermission: bool = Field(..., description="Whether the game is in intermission")
     gameHomeScore: int = Field(..., description="Home team score")
     gameAwayScore: int = Field(..., description="Away team score")
     gameHomeSOG: int = Field(..., description="Home team shots on goal")
