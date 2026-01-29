@@ -47,6 +47,7 @@ def get_games_by_date(date: str, timezone: str = "UTC") -> List[Dict[str, Any]]:
     sql = """
         SELECT g.gameId, g.gameSeason, g.gameType, g.gameDateTimeUtc, g.gameVenue,
                g.gameHomeTeamId, g.gameAwayTeamId, g.gameState, g.gamePeriod, g.gameClock,
+               g.gameInIntermission,
                g.gameHomeScore, g.gameAwayScore, g.gameHomeSOG, g.gameAwaySOG,
                ht.teamName as homeTeamName, ht.teamAbbrev as homeTeamAbbrev,
                at.teamName as awayTeamName, at.teamAbbrev as awayTeamAbbrev
@@ -77,7 +78,7 @@ def get_game_by_id(game_id: int) -> Optional[Dict[str, Any]]:
     """Fetch a single game by ID with team details."""
     sql = """
         SELECT g.gameId, g.gameSeason, g.gameType, g.gameDateTimeUtc, g.gameVenue,
-               g.gameHomeTeamId, g.gameAwayTeamId, g.gameState, g.gamePeriod, g.gameClock,
+               g.gameHomeTeamId, g.gameAwayTeamId, g.gameState, g.gamePeriod, g.gameClock, g.gameInIntermission,
                g.gameHomeScore, g.gameAwayScore, g.gameHomeSOG, g.gameAwaySOG,
                ht.teamName as homeTeamName, ht.teamAbbrev as homeTeamAbbrev,
                at.teamName as awayTeamName, at.teamAbbrev as awayTeamAbbrev
